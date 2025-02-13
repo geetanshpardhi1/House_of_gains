@@ -4,25 +4,42 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/logo.png" />
 
-    <!-- Preconnect for Faster Loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Preconnect for Faster Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Preload & Load Fonts Efficiently -->
+    <!-- Preload Google Fonts (Eliminate Render Blocking) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" as="style" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" media="print" onload="this.onload=null;this.removeAttribute('media');">
+    <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    </noscript>
+
+    <!-- Preload Hero Image -->
+    <link rel="preload" as="image" href="src/assets/hero.webp" type="image/webp">
+
 
     <!-- SEO -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HOUSE OF GAINS | Best Gym in Indore</title>
     <meta name="description" content="Join HOUSE OF GAINS for AI-powered fitness tracking, expert trainers, and personalized workout plans. Sign up today!">
-    
-    <!-- Google Tag Manager -->
-    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-YCB1HHC53L"></script>
+
+    <!-- Lazy Load Google Tag Manager -->
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-YCB1HHC53L', { 'send_page_view': false }); // Prevents blocking render
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                let script = document.createElement('script');
+                script.src = "https://www.googletagmanager.com/gtag/js?id=G-YCB1HHC53L";
+                script.async = true;
+                document.head.appendChild(script);
+
+                script.onload = () => {
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('js', new Date());
+                    gtag('config', 'G-YCB1HHC53L', { 'send_page_view': false });
+                };
+            }, 3000); // Loads 3s after page load
+        });
     </script>
 
     <!-- Preload Swiper CSS -->
@@ -36,19 +53,14 @@
     <!-- Main App -->
     <script type="module" src="/src/main.jsx"></script>
 
-    <!-- Lazy Load Scripts -->
+    <!-- Lazy Load Swiper -->
     <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const swiperScript = document.createElement("script");
-        swiperScript.src = "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
-        swiperScript.defer = true;
-        document.body.appendChild(swiperScript);
-
-        const calendlyScript = document.createElement("script");
-        calendlyScript.src = "https://assets.calendly.com/assets/external/widget.js";
-        calendlyScript.async = true;
-        document.body.appendChild(calendlyScript);
-    });
+        window.addEventListener('DOMContentLoaded', () => {
+            let swiperScript = document.createElement('script');
+            swiperScript.src = "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
+            swiperScript.defer = true;
+            document.body.appendChild(swiperScript);
+        });
     </script>
 
 </body>

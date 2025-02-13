@@ -49,7 +49,7 @@ const Header = () => {
             id="menu-btn"
             onClick={toggleMenu}
           >
-            <i className={menuOpen ? <RxCross2 /> : <IoMdMenu />}></i>
+          {menuOpen ? <RxCross2 /> : <IoMdMenu />}
           </div>
         </div>
         <ul

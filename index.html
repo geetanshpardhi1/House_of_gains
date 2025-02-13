@@ -29,23 +29,14 @@
     <title>HOUSE OF GAINS | Best Gym in Indore</title>
     <meta name="description" content="Join HOUSE OF GAINS for AI-powered fitness tracking, expert trainers, and personalized workout plans. Sign up today!">
 
-    <!-- Lazy Load Google Tag Manager -->
+    <!-- googletagmanager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCB1HHC53L"></script>
     <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                let script = document.createElement('script');
-                script.src = "https://www.googletagmanager.com/gtag/js?id=G-YCB1HHC53L";
-                script.async = true;
-                document.head.appendChild(script);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-                script.onload = () => {
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){ dataLayer.push(arguments); }
-                    gtag('js', new Date());
-                    gtag('config', 'G-YCB1HHC53L', { 'send_page_view': false });
-                };
-            }, 3000); // Loads 3s after page load
-        });
+    gtag('config', 'G-YCB1HHC53L');
     </script>
 
     <!-- Preload Swiper CSS -->
@@ -59,15 +50,7 @@
     <!-- Main App -->
     <script type="module" src="/src/main.jsx"></script>
 
-    <!-- Lazy Load Swiper -->
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            let swiperScript = document.createElement('script');
-            swiperScript.src = "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
-            swiperScript.defer = true;
-            document.body.appendChild(swiperScript);
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> 
 
 </body>
 </html>

@@ -1,0 +1,174 @@
+:root {
+  --primary-color: #dc030a;
+  --primary-color-dark: rgb(135, 6, 12);
+  --text-dark: #0a0a0a;
+  --text-light: #737373;
+  --extra-light: #e5e5e5;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "Oswald", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.section__container {
+  height: 100vH;
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  outline: none;
+  border: none;
+  color: var(--white);
+  border-radius: 2px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn__primary {
+  background-color: var(--primary-color);
+}
+
+.btn__primary:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.header {
+  width: 100%;
+  height: 100%;
+
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url("../assets/hero.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.header__container {
+  padding-block: 10rem;
+  display: grid;
+}
+
+.header__content h1 {
+  font-size: 4.5rem;
+  font-weight: 700;
+  font-family: var(--header-font);
+  line-height: 5rem;
+  color: var(--primary-color);
+}
+
+.header__content h2 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: 400;
+  font-family: var(--header-font);
+  line-height: 3rem;
+  color: var(--white);
+}
+
+.header__content p {
+  margin-bottom: 2rem;
+  color: var(--extra-light);
+}
+
+@media (width > 768px) {
+  .header__container {
+    padding-block: 12rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header__content {
+    grid-column: 2/3;
+  }
+}
+
+
+/* Calendly Css */
+.calendly__popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5); /* Backdrop blur effect */
+  backdrop-filter: blur(5px);
+  z-index: 999;
+}
+
+.calendly__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+/* Popup Box */
+.calendly__modal {
+  position: relative;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 90%;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Floating Close Button */
+.close__btn {
+  position: fixed;
+  top: 6vh; /* 10% from the top - adjusts based on screen size */
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgb(228, 23, 23);
+  color: white;
+  border: none;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.2s ease-in-out;
+}
+
+.close__btn:hover {
+  background: darkred;
+  transform: translate(-50%, 0) scale(1.1);
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .close__btn {
+    top: 12vh; /* Slightly lower for smaller screens */
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .close__btn {
+    top: 2vh;
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+}

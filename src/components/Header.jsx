@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.webp";
 import styles from "../styles/Header.module.css";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";

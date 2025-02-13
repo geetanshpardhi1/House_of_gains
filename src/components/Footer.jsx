@@ -1,14 +1,15 @@
-import img1 from "../assets/gallery-1.jpg";
-import img2 from "../assets/gallery-2.jpg";
-import img3 from "../assets/gallery-3.jpg";
-import img4 from "../assets/gallery-4.jpg";
-import img5 from "../assets/gallery-5.jpg";
-import img6 from "../assets/gallery-6.jpg";
-import img7 from "../assets/gallery-7.jpg";
-import img8 from "../assets/gallery-8.jpg";
-import img9 from "../assets/gallery-9.jpg";
-import logo from "../assets/logo.png";
+import img1 from "../assets/gallery-1.webp";
+import img2 from "../assets/gallery-2.webp";
+import img3 from "../assets/gallery-3.webp";
+import img4 from "../assets/gallery-1.webp";
+import img5 from "../assets/gallery-5.webp";
+import img6 from "../assets/gallery-6.webp";
+import img7 from "../assets/gallery-7.webp";
+import img8 from "../assets/gallery-8.webp";
+import img9 from "../assets/gallery-9.webp";
+import logo from "../assets/logo.webp";
 import styles from "../styles/Footer.module.css";
+import { FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -102,13 +103,13 @@ const Footer = () => {
           </form>
           <div className={styles.footer__socials}>
             <a href="#" aria-label="Follow us on Facebook">
-              <i className="ri-facebook-fill"></i>
+              <FaFacebook></FaFacebook>
             </a>
             <a href="#" aria-label="Follow us on Twitter">
-              <i className="ri-twitter-fill"></i>
+              <FaTwitter></FaTwitter>
             </a>
             <a href="#" aria-label="Subscribe to our YouTube channel">
-              <i className="ri-youtube-fill"></i>
+              <FaYoutube></FaYoutube>
             </a>
           </div>
         </div>

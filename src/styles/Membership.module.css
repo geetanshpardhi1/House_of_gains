@@ -60,7 +60,7 @@ a {
 
 .membership {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("../assets/membership.jpg");
+    url("../assets/membership.webp");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

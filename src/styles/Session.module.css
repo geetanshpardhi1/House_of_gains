@@ -56,22 +56,22 @@ img {
 .session__card:nth-child(1) {
   background-color: #1d1c1c;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("../assets/session-4.jpg");
+    url("../assets/session-4.webp");
 }
 
 .session__card:nth-child(2) {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("../assets/session-2.jpg");
+    url("../assets/session-2.webp");
 }
 
 .session__card:nth-child(3) {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("../assets/session-3.jpg");
+    url("../assets/session-3.webp");
 }
 
 .session__card:nth-child(4) {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("../assets/session-4.jpg");
+    url("../assets/session-4.webp");
 }
 
 .session__card h4 {

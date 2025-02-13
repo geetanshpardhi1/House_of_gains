@@ -3,6 +3,8 @@ import logo from "../assets/logo.webp";
 import styles from "../styles/Header.module.css";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
+import { IoMdMenu } from "react-icons/io";
+import { RxCross2 } from "react-icons/rx";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -47,7 +49,7 @@ const Header = () => {
             id="menu-btn"
             onClick={toggleMenu}
           >
-            <i className={menuOpen ? "ri-close-line" : "ri-menu-line"}></i>
+            <i className={menuOpen ? <RxCross2 /> : <IoMdMenu />}></i>
           </div>
         </div>
         <ul

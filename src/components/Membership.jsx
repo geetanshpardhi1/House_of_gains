@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import styles from "../styles/Membership.module.css";
 import ScrollReveal from "scrollreveal";
-import { useSelector } from "react-redux";
-import axios from "axios";
 
 const Membership = () => {
   useEffect(() => {
@@ -24,7 +22,7 @@ const Membership = () => {
 
 
   return (
-    <section className={styles.membership}>
+    <section className={styles.membership} loading="lazy">
       <div
         className={`${styles.section__container} ${styles.membership__container}`}
       >

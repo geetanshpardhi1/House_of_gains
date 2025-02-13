@@ -74,7 +74,9 @@ const Header = () => {
             </ScrollLink>
           </li>
           <li>
-            <RouterLink to="/login-register">LOGIN</RouterLink>
+            <ScrollLink to="contact" smooth={true} duration={500} offset={-70} className="cursor-pointer">
+              GALLERY
+            </ScrollLink>
           </li>
         </ul>
       </div>

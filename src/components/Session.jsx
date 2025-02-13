@@ -19,7 +19,7 @@ const Session = () => {
   return (
     <section className={styles.session}>
       {Object.keys(sessionData).map((title) => (
-        <div className={styles.session__card} key={title} loading="lazy">
+        <div className={styles.session__card} key={title}>
           <h4>{title}</h4>
           <p>{sessionData[title].slice(0, 100)}...</p>
           <button

@@ -22,7 +22,7 @@ const Membership = () => {
 
 
   return (
-    <section className={styles.membership} loading="lazy">
+    <section className={styles.membership}>
       <div
         className={`${styles.section__container} ${styles.membership__container}`}
       >

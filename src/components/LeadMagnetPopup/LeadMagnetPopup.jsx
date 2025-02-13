@@ -63,9 +63,17 @@ const LeadMagnetPopup = ({ onClose }) => {
           <Offer />
         ) : !showForm ? (
           <>
-            <h3 className="text-xl font-bold text-center">
+            <h3
+              style={{
+                color: "red",
+                fontSize: "1.25rem",
+                fontWeight: "bold",
+                textAlign: "center",
+              }}
+            >
               Get Your Special Gym Offer Today!🔥
             </h3>
+
             <p className="text-gray-400 text-center mt-2">
               Enter your details to unlock exclusive gym discounts.
             </p>

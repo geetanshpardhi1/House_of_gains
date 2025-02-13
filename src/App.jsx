@@ -8,13 +8,13 @@ function App() {
   const [showPopup, setShowPopup] = useState(false);
   const location = useLocation();
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setShowPopup(true);
-  //   }, 2000);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+    }, 2000);
 
-  //   return () => clearTimeout(timer);
-  // }, []);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Scroll to top when navigating between routes
   useEffect(() => {

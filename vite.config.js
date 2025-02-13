@@ -1,7 +1,22 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import compression from "vite-plugin-compression";
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-})
+  plugins: [
+    react(),
+    compression({
+      algorithm: "brotliCompress", // or 'gzip'
+      threshold: 1024 * 5, // Compress files larger than 5KB
+    }),
+  ],
+  build: {
+    minify: "esbuild", // Use esbuild for faster minification
+    rollupOptions: {
+      treeshake: true, // Remove unused code
+    },
+  },
+  css: {
+    minify: true,
+  },
+});

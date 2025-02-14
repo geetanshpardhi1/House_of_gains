@@ -15,7 +15,7 @@ const About = () => {
     cards.forEach((card, index) => {
       ScrollReveal().reveal(card, {
         ...scrollRevealOptions,
-        delay: index * 500,
+        delay: index * 300,
       });
     });
   }, []);

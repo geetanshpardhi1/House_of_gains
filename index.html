@@ -16,14 +16,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" media="print" onload="this.onload=null;this.removeAttribute('media');">
 
     <noscript>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
     </noscript>
-
-
-    <!-- Preload Hero Image -->
-    <link rel="preload" as="image" href="/assets/hero.webp" type="image/webp">
-    <link rel="preload" as="image" href="/assets/logo.webp" type="image/webp">
-
 
     <!-- SEO -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,11 +27,10 @@
     <!-- googletagmanager -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCB1HHC53L"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-YCB1HHC53L');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YCB1HHC53L');
     </script>
 
     <!-- Preload Swiper CSS -->
@@ -49,25 +42,30 @@
     <div id="root"></div>
 
     <!-- Main App -->
-    <script type="module" src="/src/main.jsx"></script>
-    <!-- voiceflow bot -->
+    <script type="module" src="/src/main.jsx" defer></script>
+
+    <!-- Voiceflow Bot -->
     <script type="text/javascript">
-      (function(d, t) {
-          var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-          v.onload = function() {
-            window.voiceflow.chat.load({
-              verify: { projectID: '67af2b52999ccc930fe9c1c5' },
-              url: 'https://general-runtime.voiceflow.com',
-              versionID: 'production'
-            }).then(() => {
-              console.log('Voiceflow bot is loaded!');
-            }).catch((error) => {
-              console.error('Error loading Voiceflow bot:', error);
-            });
-          }
-          v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-      })(document, 'script');
-    
+        (function(d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function() {
+                console.log("Voiceflow bot script loaded successfully!");
+
+                // Initialize the bot after it's loaded
+                window.voiceflow.chat.load({
+                    verify: { projectID: '67af2b52999ccc930fe9c1c5' },
+                    url: 'https://general-runtime.voiceflow.com',
+                    versionID: 'production'
+                }).then(() => {
+                    console.log("Voiceflow bot has been successfully loaded!");
+                }).catch((error) => {
+                    console.error("Error loading Voiceflow bot:", error);
+                });
+            };
+            v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+            v.type = "text/javascript";
+            s.parentNode.insertBefore(v, s);
+        })(document, 'script');
     </script>
 </body>
 </html>

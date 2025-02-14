@@ -59,6 +59,10 @@
               verify: { projectID: '67af2b52999ccc930fe9c1c5' },
               url: 'https://general-runtime.voiceflow.com',
               versionID: 'production'
+            }).then(() => {
+              console.log('Voiceflow bot is loaded!');
+            }).catch((error) => {
+              console.error('Error loading Voiceflow bot:', error);
             });
           }
           v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);

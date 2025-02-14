@@ -55,6 +55,11 @@
       (function(d, t) {
           var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
           v.onload = function() {
+
+            if (localStorage.getItem('voiceflow-session-67af2b52999ccc930fe9c1c5')) {
+              localStorage.removeItem('voiceflow-session-67af2b52999ccc930fe9c1c5');  // Clear only the Voiceflow data
+          }
+
             window.voiceflow.chat.load({
               verify: { projectID: '67af2b52999ccc930fe9c1c5' },
               url: 'https://general-runtime.voiceflow.com',

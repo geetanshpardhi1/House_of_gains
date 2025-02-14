@@ -35,6 +35,9 @@ const Header = () => {
     };
   }, []);
 
+  // Check if we are on the Gallery page
+  const isGalleryPage = location.pathname === "/gallery";
+
   return (
     <nav className={styles.nav}>
       <div className={styles.nav__bar}>
@@ -49,7 +52,7 @@ const Header = () => {
             id="menu-btn"
             onClick={toggleMenu}
           >
-          {menuOpen ? <RxCross2 /> : <IoMdMenu />}
+            {menuOpen ? <RxCross2 /> : <IoMdMenu />}
           </div>
         </div>
         <ul
@@ -60,26 +63,32 @@ const Header = () => {
           <li>
             <RouterLink to="/">HOME</RouterLink>
           </li>
-          <li>
-            <ScrollLink to="about" smooth={true} duration={500} offset={-70} className="cursor-pointer">
-              ABOUT
-            </ScrollLink>
-          </li>
-          <li>
-            <ScrollLink to="clients" smooth={true} duration={500} offset={-70} className="cursor-pointer">
-              CLIENT
-            </ScrollLink>
-          </li>
-          <li>
-            <ScrollLink to="contact" smooth={true} duration={500} offset={-70} className="cursor-pointer">
-              CONTACT US
-            </ScrollLink>
-          </li>
-          <li>
-            <ScrollLink to="contact" smooth={true} duration={500} offset={-70} className="cursor-pointer">
-              GALLERY
-            </ScrollLink>
-          </li>
+          {/* Only show the links if we're not on the Gallery page */}
+          {!isGalleryPage && (
+            <>
+              <li>
+                <ScrollLink to="about" smooth={true} duration={500} offset={-70} className="cursor-pointer">
+                  ABOUT
+                </ScrollLink>
+              </li>
+              <li>
+                <ScrollLink to="clients" smooth={true} duration={500} offset={-70} className="cursor-pointer">
+                  CLIENT
+                </ScrollLink>
+              </li>
+              <li>
+                <ScrollLink to="contact" smooth={true} duration={500} offset={-70} className="cursor-pointer">
+                  CONTACT US
+                </ScrollLink>
+              </li>
+            </>
+          )}
+          {/* Show gallery link only if not on the gallery page */}
+          {!isGalleryPage && (
+            <li>
+              <RouterLink to="/gallery">GALLERY</RouterLink>
+            </li>
+          )}
         </ul>
       </div>
     </nav>
